@@ -1,0 +1,55 @@
+CREATE DATABASE BookStoreDB
+CREATE Table Books(
+ID INT PRIMARY KEY IDENTITY(1,1),
+NAME NVARCHAR(50),
+PRICE DECIMAL,
+STOCKCOUNT INT
+)
+
+CREATE TABLE Authors(
+ID INT PRIMARY KEY IDENTITY(1,1),
+FULLNAME NVARCHAR(50)
+)
+
+ALTER TABLE Books
+ADD AuthorId int;
+
+INSERT INTO Books(NAME,PRICE,STOCKCOUNT,AuthorId)
+Values('Aytacin aksesuarlari',250,5,10),
+('Leyli ve Mecnun',29,25,11),
+('Lemanin eserleri',308,105,12),
+('Nubarin el isi',50,57,13),
+('Nerminin evi',20,78,14)
+
+
+INSERT INTO Authors(FULLNAME)
+VALUES('Leman'),
+('Nubar'),
+('Aytac')
+
+SELECT * FROM Books;
+
+SELECT * FROM Authors;
+
+SELECT *FROM Books
+Where PRICE>20;
+
+SELECT *FROM Books 
+Where STOCKCOUNT=20;
+
+SELECT *FROM Books 
+Where NAME LIKE'%a%';
+
+SELECT *FROM Books 
+Where PRICE BETWEEN 10 AND 30;
+
+SELECT NAME,PRICE FROM Books;
+
+SELECT TOP 1 * FROM Books
+ORDER BY PRICE DESC;
+
+
+
+
+
+

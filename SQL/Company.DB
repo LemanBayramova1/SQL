@@ -1,0 +1,59 @@
+CREATE DATABASE CompanyDB
+CREATE Table Employees (
+ID INT PRIMARY KEY IDENTITY(1,1),
+FULLNAME NVARCHAR(50),
+SALARY DECIMAL
+)
+
+CREATE TABLE Departments(
+ID INT PRIMARY KEY IDENTITY(1,1),
+DepartmentName	NVARCHAR(50)
+)
+
+ALTER TABLE Employees
+Add Departmentid  INT
+
+
+
+
+INSERT INTO  Employees(FULLNAME,SALARY,Departmentid)
+VALUES('Leman Bayramova',15000,21),
+('Aytac Shakarzade',5000,22),
+('Omer Mirzeyev',7000,23),
+('Vusale Nesobova',2000,24),
+('Nermin Zeynalli',6000,25),
+('Kanan Murselizade',1000,26)
+
+INSERT INTO Departments(DepartmentName)
+VALUES('IT'),
+('PM'),
+('HR')
+
+SELECT * FROM Employees;
+SELECT * FROM Departments;
+SELECT *fROM  Employees WHERE SALARY>1000;
+
+SELECT *FROM  Employees 
+WHERE SALARY BETWEEN 500 AND 2000;
+
+SELECT * FROM Employees 
+WHERE FULLNAME LIKE '%m%';
+
+SELECT *FROM Employees
+WHERE Departmentid is null;
+
+SELECT FULLNAME,SALARY FROM Employees;
+
+SELECT TOP 1 * FROM EMPLOYEES
+ORDER BY SALARY DESC;
+
+
+
+
+
+
+
+
+
+
+
